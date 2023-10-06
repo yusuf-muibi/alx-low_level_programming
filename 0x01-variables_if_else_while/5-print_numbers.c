@@ -1,0 +1,13 @@
+#include <stdio.h>
+/**
+* main - main is the main function used for the program
+* Return: Always zero for a successful execution
+*/
+int main(void)
+{
+int t;
+for (t = 0 ; t < 10 ; t++)
+putchar(t);
+putchar('\n');
+return (0);
+}
