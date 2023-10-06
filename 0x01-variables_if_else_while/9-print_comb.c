@@ -8,14 +8,13 @@ int main(void)
 int t;
 for (t = 0 ; t <= 9 ; t++)
 {
-if (t == 9)
 putchar(t + '0');
-else
+if (t != 9)
 {
-putchar(t + '0');
 putchar(',');
-putchar(' ');
+putchar(' '); 
 }
+putchar('\n');
 }
 return (0);
 }
