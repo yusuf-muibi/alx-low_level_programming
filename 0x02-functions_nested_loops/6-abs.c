@@ -2,7 +2,7 @@
 /**
 * _abs - this is the function that conputes absolute value
 * @t: this is the parameter to be used
-* Return: Always zero for a successful code execution
+* Return: Returns -t or t
 */
 int _abs(int t)
 {
