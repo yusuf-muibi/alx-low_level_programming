@@ -10,6 +10,6 @@ int u;
 u = t % 10;
 if (t < 0)
 u = -u;
-_putchar(u + '0')
+_putchar(u + '0');
 return (u);
 }
