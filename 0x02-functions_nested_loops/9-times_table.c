@@ -16,7 +16,7 @@ if (u == 0)
 printf("%d, ", v);
 else
 {
-printf("%2d, ", v);
+printf("%2d", v);
 if (u != 9)
 printf(", ");
 }
