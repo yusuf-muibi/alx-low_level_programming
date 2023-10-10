@@ -1,0 +1,17 @@
+#include "main.h"
+/**
+* print_alphabet_x10 - This is the main function used in the code
+* Return: Always return zero for a successful execution
+*/
+void print_alphabet_x10(void)
+{
+int t;
+char u;
+
+for (t = 0 ; t <= 9 ; t++)
+{
+for (u = 'a' ; u <= 'z' ; u++)
+_putchar(u);
+}
+_putchar('\n');
+}
