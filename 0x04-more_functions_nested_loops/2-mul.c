@@ -1,0 +1,12 @@
+#include "main.h"
+/**
+* mul - This is the function to multiply two digits
+* @a: Parameter 1 to be multiplied
+* @b: Parameter 2 to be multiplied
+* Return: Returns the result of the multiplication
+*/
+
+int mul(int a, int b)
+{
+return (a * b);
+}
