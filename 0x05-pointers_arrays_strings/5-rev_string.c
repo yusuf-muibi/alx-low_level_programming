@@ -15,6 +15,6 @@ for (t = 0; t < count / 2; t++)
 {
 u = s[t];
 s[t] = s[count - 1 - t];
- s[count - 1 - t] = u;
+s[count - 1 - t] = u;
 }
 }
