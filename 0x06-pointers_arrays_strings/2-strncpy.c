@@ -1,0 +1,21 @@
+#include "main.h"
+/**
+* _strncpy - this is the function that copies out strings
+* @dest: this is the destination string
+* @src: this is the course string to be copied
+* @n: this is the number of characters to be copied
+* Return: this returns the value of the destination
+*/
+char *_strncpy(char *dest, char *src, int n)
+{
+int t;
+for (t = 0; t < n && src[t] != '\0'; t++)
+{
+dest[t] = src[t];
+}
+for (; t < n; t++)
+{
+dest[t] = '\0';
+}
+return (dest);
+}
