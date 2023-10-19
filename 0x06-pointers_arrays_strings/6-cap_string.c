@@ -23,5 +23,5 @@ if (t == upper_word ||
 }
 t++;
 }
-return(upper_word);
+return (upper_word);
 }
