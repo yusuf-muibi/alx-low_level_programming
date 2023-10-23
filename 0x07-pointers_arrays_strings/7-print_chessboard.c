@@ -12,7 +12,7 @@ for (t = 0; t < 8; t++)
 {
 for (u = 0; u < 8; u++)
 {
-  printf("%c", a[t][u]);
+printf("%c", a[t][u]);
 }
 printf("\n");
 }
