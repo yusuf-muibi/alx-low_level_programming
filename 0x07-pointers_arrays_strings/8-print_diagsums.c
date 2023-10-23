@@ -16,7 +16,7 @@ for (t = 0; t < size; t++)
 sumA += a[t];
 a += size;
 }
-a += size;
+a -= size;
 for (t = 0; t < size; t++)
 {
 sumB += a[t];
