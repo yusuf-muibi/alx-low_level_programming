@@ -1,0 +1,28 @@
+#include "main.h"
+int palindrome_test(char *s, int t, int u)
+{
+  if (t >= u)
+    {
+      return (1);
+    }
+  if (s[t] != s[u])
+    {
+      return (0);
+    }
+  else
+    {
+      return (palindrome_test(s, t + 1, u - 1));
+    }
+}
+int is_palindrome(char *s);
+{
+  int length;
+    length = strlen(s);
+    if (length <= 1)
+return (1);
+}
+else
+{
+return (palindrome_test(s, 0, length -1));
+}
+}
