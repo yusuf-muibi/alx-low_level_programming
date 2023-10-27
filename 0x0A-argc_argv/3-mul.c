@@ -1,0 +1,28 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+/**
+* main - the main function in the program
+* @argc: this is the number of arguments
+* @argv: this is the array of the arguments
+* Return: returns zero for a successful execution
+*/
+int main(int argc, char *argv[])
+{
+int t;
+int u;
+int result;
+if (argc != 3)
+{
+printf("Error\n");
+return (1);
+}
+else
+{
+t = atoi(argv[1]);
+u = atoi(argv[2]);
+result = (t *u);
+printf("%d\n", result);
+return (0);
+}
+}
