@@ -1,0 +1,36 @@
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/**
+* main - the main function in the program
+* @argc: this is the number of arguments
+* @argv: this is the array of the arguments
+* Return: returns zero for a successful execution
+*/
+int main(int argc, char *argv[])
+{
+int sum;
+size_t t;
+size_t u;
+if (argc == 1)
+{
+printf("0\n");
+return (0);
+}
+sum = 0;
+for (t = 1; t < argc; t++)
+{
+for (u = 0; u < strlen(argv[t]); u++)
+{
+if (argv[t][u] < '0' || argv[t][u] > '9')
+{
+printf("Error\n");
+return (1);
+}
+}
+sum += atoi(argv[t]);
+}
+printf("%d\n", sum);
+return (0);
+}
