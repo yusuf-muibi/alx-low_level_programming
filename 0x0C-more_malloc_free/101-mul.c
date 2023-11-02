@@ -1,12 +1,15 @@
 #include "main.h"
 #include <stdlib.h>
+
+int _isdigit(char *s);
+int _atoi(char *s);
+void _print_int(int n);
 /**
 * main - multiplies two positive numbers
 * @argc: number of command line arguments
 * @argv: array of command line arguments
 * Return: 0 on success, 98 on error
 */
-void _print_int(int n);
 int main(int argc, char *argv[])
 {
 int num1, num2, result;
