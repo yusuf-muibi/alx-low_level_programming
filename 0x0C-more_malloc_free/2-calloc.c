@@ -1,0 +1,20 @@
+#include "main.h"
+#include <stdlib.h>
+#include <string.h>
+/**
+* _calloc - this is the contiguous allocation function
+* @nmemb: this is theelements in the array
+* @size: this is the number of bytes of each elements
+* Return: returns the pointer to the memory
+*/
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+void *ptr;
+if (nmemb == 0 || size == 0)
+return (NULL);
+ptr = malloc(nmemb * size);
+if (ptr == NULL)
+return (NULL);
+memset(ptr, 0, nmemb * size);
+return (ptr);
+}
