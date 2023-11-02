@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 int _isdigit(char *s);
 int _atoi(char *s);
 void _print_int(int n);
@@ -14,22 +15,12 @@ int main(int argc, char *argv[])
 int num1, num2, result;
 if (argc != 3)
 {
-_putchar('E');
-_putchar('r');
-_putchar('r');
-_putchar('o');
-_putchar('r');
-_putchar('\n');
+printf("Error\n");
 exit(98);
 }
 if (!_isdigit(argv[1]) || !_isdigit(argv[2]))
 {
-_putchar('E');
-_putchar('r');
-_putchar('r');
-_putchar('o');
-_putchar('r');
-_putchar('\n');
+printf("Error\n");
 exit(98);
 }
 num1 = _atoi(argv[1]);
