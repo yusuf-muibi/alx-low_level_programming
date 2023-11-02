@@ -1,9 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-int _isdigit(char *s);
-int _atoi(char *s);
-void _print_int(int n);
 /**
 * main - multiplies two positive numbers
 * @argc: number of command line arguments
@@ -15,12 +12,12 @@ int main(int argc, char *argv[])
 int num1, num2, result;
 if (argc != 3)
 {
-printf("Error\n");
+print_error();
 exit(98);
 }
 if (!_isdigit(argv[1]) || !_isdigit(argv[2]))
 {
-printf("Error\n");
+print_error();
 exit(98);
 }
 num1 = _atoi(argv[1]);
@@ -74,4 +71,16 @@ n = -n;
 if (n / 10)
 _print_int(n / 10);
 _putchar(n % 10 + '0');
+}
+/**
+* print_error - prints error message
+*/
+void print_error(void)
+{
+_putchar('E');
+_putchar('r');
+_putchar('r');
+_putchar('o');
+_putchar('r');
+_putchar('\n');
 }

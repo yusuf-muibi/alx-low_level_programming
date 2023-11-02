@@ -11,6 +11,8 @@ int _atoi(char *s);
 int main(int argc, char *argv[]);
 int _putchar(char c);
 int _isdigit(char *s);
+void _print_int(int n);
+void print_error(void);
 
 #endif
 
