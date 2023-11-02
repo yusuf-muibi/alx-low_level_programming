@@ -9,6 +9,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _isdigit(char *s);
 int _atoi(char *s);
 int main(int argc, char *argv[]);
+int _putchar(char c);
+int _isdigit(char *s);
 
 #endif
 

@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
 * main - multiplies two positive numbers
@@ -7,23 +6,35 @@
 * @argv: array of command line arguments
 * Return: 0 on success, 98 on error
 */
+void _print_int(int n);
 int main(int argc, char *argv[])
 {
 int num1, num2, result;
 if (argc != 3)
 {
-printf("Error\n");
+_putchar('E');
+_putchar('r');
+_putchar('r');
+_putchar('o');
+_putchar('r');
+_putchar('\n');
 exit(98);
 }
 if (!_isdigit(argv[1]) || !_isdigit(argv[2]))
 {
-printf("Error\n");
+_putchar('E');
+_putchar('r');
+_putchar('r');
+_putchar('o');
+_putchar('r');
+_putchar('\n');
 exit(98);
 }
 num1 = _atoi(argv[1]);
 num2 = _atoi(argv[2]);
 result = num1 *num2;
-printf("%d\n", result);
+_print_int(result);
+_putchar('\n');
 return (0);
 }
 /**
@@ -55,4 +66,19 @@ result = result * 10 + (*s - '0');
 s++;
 }
 return (result);
+}
+/**
+* _print_int - prints an integer
+* @n: integer to print
+*/
+void _print_int(int n)
+{
+if (n < 0)
+{
+_putchar('-');
+n = -n;
+}
+if (n / 10)
+_print_int(n / 10);
+_putchar(n % 10 + '0');
 }
