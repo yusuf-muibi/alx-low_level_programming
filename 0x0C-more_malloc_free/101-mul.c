@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-
 int _isdigit(char *s);
 int _atoi(char *s);
 void _print_int(int n);
