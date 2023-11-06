@@ -32,3 +32,12 @@ return (NULL);
 dog_new->age = age;
 return (dog_new);
 }
+void free_dog(dog_t *d)
+{
+if (d != NULL)
+{
+free(d->name);
+free(d->owner);
+free(d);
+}
+}
