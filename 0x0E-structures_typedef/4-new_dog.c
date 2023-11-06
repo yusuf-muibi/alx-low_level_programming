@@ -32,6 +32,10 @@ return (NULL);
 dog_new->age = age;
 return (dog_new);
 }
+/**
+* free_dog - this frees the memory used
+* @d: the dog structure
+*/
 void free_dog(dog_t *d)
 {
 if (d != NULL)
