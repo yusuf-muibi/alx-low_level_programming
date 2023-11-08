@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+* main - this prints the opcodes of itself
+* @argc: the argument counter
+* @argv: the argument vector
+* Return: returns zero for a successful execution
+*/
+int main(int argc, char *argv[])
+{
+int t, u;
+int (*address)(int, char **) = main;
+unsigned char opcode;
+if (argc != 2)
+{
+printf("Error\n");
+exit(1);
+}
+t = atoi(argv[1]);
+if (t < 0)
+{
+printf("Error\n");
+exit(2);
+}
+for (u = 0; u < t; u++)
+{
+opcode = *(unsigned char *)address;
+printf("%.2x", opcode);
+if (u == t - 1)
+continue;
+printf(" ");
+address++;
+}
+printf("\n");
+return (0);
+}
