@@ -6,8 +6,8 @@ global main
 extern printf
 
 main:
-push rdi
+sub rsp, 8
 mov rdi, hello
 call printf
-pop rdi
+add rsp, 8
 ret
