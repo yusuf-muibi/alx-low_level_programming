@@ -1,14 +1,11 @@
 extern printf
 section .data
-	message:	db 'Hello, Holberton', 10
-	format:		db 'Hello, Holberton', 0
+	format:		db 'Hello, Holberton\n', 0
 section .text
 	global main
 main:
-	push	rbp
-	mov	rsi,message
-	mov     rdi,format
-	call	printf
-	pop	rbp
-	mov	rax,0
+	mov edi, format
+	xor eax, eax
+	call printf
+	mov	eax,0
 	ret
