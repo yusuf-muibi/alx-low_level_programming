@@ -4,8 +4,8 @@
 /**
 * looped_listint_len - Counts the number of unique nodes
 * in a looped listint_t linked list.
-* @head: A pointer to the head of the listint_t to check.
-* Return: If the list is not looped - 0.
+* @head: A pointer to the head of the listint_t.
+* Return: 0 if the list is not looped.
 */
 size_t looped_listint_len(const listint_t *head)
 {
@@ -46,10 +46,12 @@ return (0);
 */
 size_t print_listint_safe(const listint_t *head)
 {
-size_t nodes = looped_listint_len(head);
+size_t nodes;
+size_t t = 0;
+nodes = looped_listint_len(head);
 if (nodes == 0)
 {
-while (head != NULL)
+for (; head != NULL; nodes++)
 {
 printf("[%p] %d\n", (void *)head, head->n);
 head = head->next;
@@ -57,7 +59,6 @@ head = head->next;
 }
 else
 {
-size_t t;
 for (t = 0; t < nodes; t++)
 {
 printf("[%p] %d\n", (void *)head, head->n);
