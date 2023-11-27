@@ -2,70 +2,70 @@
 #include <stdio.h>
 
 /**
-* check_errors - checks if files can be opened.
-* @source_fd: source file descriptor.
-* @dest_fd: destination file descriptor.
-* @args: command line arguments.
+* error_file - checks if files can be opened.
+* @file_from: file_from.
+* @file_to: file_to.
+* @argv: arguments vector.
 * Return: no return.
 */
-void check_errors(int source_fd, int dest_fd, char *args[])
+void error_file(int file_from, int file_to, char *argv[])
 {
-if (source_fd == -1)
+if (file_from == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", args[1]);
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
-if (dest_fd == -1)
+if (file_to == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", args[2]);
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
 }
 
 /**
-* main - main function.
+* main - check the code for Holberton School students.
 * @argc: number of arguments.
-* @argv: argument vector.
+* @argv: arguments vector.
 * Return: Always 0.
 */
 int main(int argc, char *argv[])
 {
-int source_fd, dest_fd, close_result;
-ssize_t num_chars, num_written;
-char buffer[1024];
+int file_from, file_to, err_close;
+ssize_t nchars, nwr;
+char buf[1024];
 
 if (argc != 3)
 {
-dprintf(STDERR_FILENO, "%s\n", "Usage: my_cp source_file dest_file");
+dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 exit(97);
 }
 
-source_fd = open(argv[1], O_RDONLY);
-dest_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-check_errors(source_fd, dest_fd, argv);
+file_from = open(argv[1], O_RDONLY);
+file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+error_file(file_from, file_to, argv);
 
-num_chars = 1024;
-while (num_chars == 1024)
+nchars = 1024;
+while (nchars == 1024)
 {
-num_chars = read(source_fd, buffer, 1024);
-if (num_chars == -1)
-check_errors(-1, 0, argv);
-num_written = write(dest_fd, buffer, num_chars);
-if (num_written == -1)
-check_errors(0, -1, argv);
+nchars = read(file_from, buf, 1024);
+if (nchars == -1)
+error_file(-1, 0, argv);
+nwr = write(file_to, buf, nchars);
+if (nwr == -1)
+error_file(0, -1, argv);
 }
 
-close_result = close(source_fd);
-if (close_result == -1)
+err_close = close(file_from);
+if (err_close == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 exit(100);
 }
 
-close_result = close(dest_fd);
-if (close_result == -1)
+err_close = close(file_to);
+if (err_close == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest_fd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 exit(100);
 }
 return (0);
