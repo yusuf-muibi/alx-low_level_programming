@@ -18,7 +18,7 @@ while (h->prev != NULL)
 h = h->prev;
 
 while (h != NULL)
-    {
+{
 node_count++;
 h = h->next;
 }
